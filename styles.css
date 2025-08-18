@@ -1,0 +1,85 @@
+/* Base reset */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+    color: #111827;
+    background: #f8fafc;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 24px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.logo { flex-shrink: 0; }
+
+.menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.menu a {
+    display: inline-block;
+    text-decoration: none;
+    color: #111827;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+.menu a:hover {
+    background-color: #f3f4f6;
+}
+
+.menu a:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Page scaffold to demonstrate spacing */
+main {
+    max-width: 1024px;
+    margin: 24px auto;
+    padding: 0 24px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+    nav { height: auto; padding: 12px 16px; align-items: flex-start; }
+    .logo-img { height: 32px; }
+    .menu { position: static; transform: none; width: 100%; }
+    .menu ul { flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .menu a { padding: 6px 10px; }
+}
+
+
